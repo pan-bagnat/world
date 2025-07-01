@@ -1,0 +1,28 @@
+module:
+  name: world
+  version: "0.1.0"
+
+services:
+  - name: db
+    build:
+      context: .
+      dockerfile: Dockerfile.db
+    expose:
+      - 5132
+    env:
+      - key: POSTGRES_USER
+        value: postgres
+      - key: POSTGRES_PASSWORD
+        value: postgres
+    depends_on: []
+    volumes:
+      - name: db-data
+        servicePath: /var/lib/postgresql/data
+    networks:
+      - hi-net
+
+volumes:
+  - db-data
+
+networks:
+  - world-net
