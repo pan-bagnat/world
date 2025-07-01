@@ -25,4 +25,4 @@ volumes:
   - db-data
 
 networks:
-  - world-net
+  - name: world-net
