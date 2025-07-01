@@ -19,7 +19,7 @@ services:
       - name: db-data
         servicePath: /var/lib/postgresql/data
     networks:
-      - hi-net
+      - world-net
 
 volumes:
   - db-data
